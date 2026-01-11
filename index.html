@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joyce LAM Pui Ling | Portfolio 2025</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Joyce LAM | Portfolio 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* --- 1. 定義顏色變量 (支援深色模式) --- */
+        /* --- 1. 顏色與變量 (支援 Dark Mode) --- */
         :root {
             --bg-color: #ffffff;
             --text-main: #1a1a1a;
-            --text-sub: #555555;
-            --accent-gold: #FFD700;
-            --card-bg: #f9f9f9;
-            --border-color: #eeeeee;
-            --spacing-lg: 80px;
-            --spacing-md: 40px;
+            --text-sub: #666666;
+            --accent-gold: #FFD700; /* 金色 Hover */
+            --card-bg: #fdfdfd;
+            --modal-bg: rgba(255, 255, 255, 0.95);
+            --border-radius: 20px; /* 圓角設定 */
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         @media (prefers-color-scheme: dark) {
@@ -24,226 +24,231 @@
                 --text-main: #ffffff;
                 --text-sub: #b0b0b0;
                 --card-bg: #161616;
-                --border-color: #333333;
+                --modal-bg: rgba(10, 10, 10, 0.98);
             }
         }
 
         /* --- 2. 基礎樣式 --- */
-        * { margin: 0; padding: 0; box-box: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
             line-height: 1.6;
-            transition: background-color 0.3s ease;
         }
 
-        h1, h2 { font-family: 'Playfair Display', serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
-        /* --- 3. 佈局與空間感 --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
+        /* --- 3. Header & 空間感 --- */
+        header { padding: 100px 0 60px 0; text-align: center; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 10px; }
+        .subtitle { letter-spacing: 4px; color: var(--text-sub); text-transform: uppercase; font-size: 0.9rem; }
 
-        header {
-            padding: var(--spacing-lg) 0;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .hero-title { font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 10px; }
-        .hero-subtitle { font-size: 1.1rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 3px; }
-
-        /* 下載按鈕 */
-        .download-area { margin-top: 30px; }
+        /* 下載按鈕 (圓角) */
+        .download-zone { margin-top: 40px; }
         .btn-download {
             background: transparent;
             border: 1px solid var(--text-main);
             color: var(--text-main);
-            padding: 12px 30px;
-            font-size: 0.9rem;
+            padding: 12px 35px;
+            border-radius: 50px; /* 全圓角按鈕 */
             cursor: pointer;
-            transition: all 0.3s;
+            font-weight: 600;
+            transition: var(--transition);
         }
         .btn-download:hover {
             background: var(--accent-gold);
             border-color: var(--accent-gold);
             color: #000;
+            transform: scale(1.05);
         }
 
-        /* 作品網格 */
+        /* --- 4. 作品網格 (空間感 + 圓角) --- */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: var(--spacing-md);
-            padding: var(--spacing-lg) 0;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 50px; /* 增加空間感 */
+            padding: 60px 0;
         }
 
         .project-card {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
             overflow: hidden;
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            text-decoration: none;
-            color: inherit;
+            cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+            position: relative;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px);
             border-color: var(--accent-gold);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
-        .image-box {
-            width: 100%;
-            height: 250px;
-            background: #e0e0e0;
-            overflow: hidden;
-        }
-
-        .image-box img {
-            width: 100%;
-            height: 100%;
+        .card-img {
+            width: 100%; height: 260px;
+            background: #eee;
             object-fit: cover;
-            filter: grayscale(20%);
-            transition: 0.5s;
+            transition: var(--transition);
         }
 
-        .project-card:hover .image-box img {
-            filter: grayscale(0%);
-            scale: 1.05;
+        .project-card:hover .card-img { filter: brightness(0.8); }
+
+        .card-info { padding: 25px; }
+        .card-category { font-size: 0.75rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; }
+        .card-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin: 8px 0; }
+
+        /* --- 5. 彈窗系統 (Modal) --- */
+        .modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--modal-bg);
+            display: none; /* 預設隱藏 */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
-        .content-box { padding: 25px; }
-        .cat-num { font-size: 0.8rem; color: var(--accent-gold); font-weight: 600; }
-        .proj-title { font-size: 1.4rem; margin: 10px 0; }
-        .proj-desc { font-size: 0.9rem; color: var(--text-sub); }
+        .modal.active { display: flex; }
 
-        footer {
-            padding: var(--spacing-lg) 0;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-sub);
+        .modal-content {
+            background: var(--bg-color);
+            width: 90%; max-width: 900px;
+            max-height: 85vh;
+            border-radius: var(--border-radius);
+            padding: 50px;
+            position: relative;
+            overflow-y: auto;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            border: 1px solid var(--accent-gold);
         }
 
-        /* 針對 p.14-19 的特別區塊 */
-        .certs-section {
+        .close-modal {
+            position: absolute; top: 20px; right: 25px;
+            font-size: 2rem; cursor: pointer; color: var(--text-main);
+        }
+
+        .modal-body img {
+            width: 100%; border-radius: 12px; margin: 20px 0;
+        }
+
+        /* --- 6. 頁腳與輔助證明 --- */
+        .supporting-docs {
             background: var(--card-bg);
+            border-radius: var(--border-radius);
             padding: 60px;
-            margin: var(--spacing-lg) 0;
             text-align: center;
+            margin: 60px 0;
         }
+
+        footer { padding: 80px 0; text-align: center; opacity: 0.6; font-size: 0.8rem; }
+
     </style>
 </head>
 <body>
 
     <header>
         <div class="container">
-            <h1 class="hero-title">Joyce LAM Pui Ling</h1>
-            <p class="hero-subtitle">Creative Portfolio 2025</p>
-            <div class="download-area">
+            <p class="subtitle">Joyce LAM Pui Ling</p>
+            <h1>Creative Portfolio</h1>
+            <div class="download-zone">
                 <button onclick="handleDownload()" class="btn-download">DOWNLOAD FULL PDF</button>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <section class="portfolio-grid">
+        <div class="portfolio-grid">
             
-            <div class="project-card">
-                <div class="image-box"><img src="assets/images/01_photo_ada.jpg" alt="Photo Shooting"></div>
-                <div class="content-box">
-                    <span class="cat-num">01 / PHOTO SHOOTING</span>
-                    <h3 class="proj-title">Supreme Art Entertainment</h3>
-                    <p class="proj-desc">Artiste: Ada Choi, Max Zhang, Natalie Ho. Featured on Weibo & Instagram.</p>
+            <div class="project-card" onclick="openModal('modal01')">
+                <img src="assets/images/01_photo_ada.jpg" class="card-img" alt="Photo Shooting">
+                <div class="card-info">
+                    <span class="card-category">01 Photo Shooting</span>
+                    <h3 class="card-title">Supreme Art Entertainment</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">Artiste: Ada Choi, Max Zhang...</p>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="image-box"><img src="assets/images/02_bday_post.jpg" alt="Birthday Post"></div>
-                <div class="content-box">
-                    <span class="cat-num">02 / SOCIAL MEDIA</span>
-                    <h3 class="proj-title">Artiste's Birthday Post</h3>
-                    <p class="proj-desc">Created with Canva, focusing on engagement and brand aesthetic.</p>
+            <div class="project-card" onclick="openModal('modal02')">
+                <img src="assets/images/02_bday_post.jpg" class="card-img" alt="Social Media">
+                <div class="card-info">
+                    <span class="card-category">02 Artiste's Social Media</span>
+                    <h3 class="card-title">Birthday Post Creation</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">Canva design for high engagement.</p>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="image-box"><img src="assets/images/03_font_design.jpg" alt="Font Design"></div>
-                <div class="content-box">
-                    <span class="cat-num">03 / GRAPHIC DESIGN</span>
-                    <h3 class="proj-title">Lostaholic Font Design</h3>
-                    <p class="proj-desc">Custom typography for "Lostaholic" creative project.</p>
-                </div>
             </div>
 
-            <a href="https://www.youtube.com/results?search_query=Joyce+Lam+Video" target="_blank" class="project-card">
-                <div class="image-box"><img src="assets/images/04_video_echo.jpg" alt="Video Production"></div>
-                <div class="content-box">
-                    <span class="cat-num">04 / VIDEO PRODUCTION</span>
-                    <h3 class="proj-title">Music Videos & Promos</h3>
-                    <p class="proj-desc">Video production for Echo Entertainment. Click to view on YouTube.</p>
-                </div>
-            </a>
-
-            <div class="project-card">
-                <div class="image-box"><img src="assets/images/06_ig_mushroom.jpg" alt="Instagram Post"></div>
-                <div class="content-box">
-                    <span class="cat-num">06 / CONTENT STRATEGY</span>
-                    <h3 class="proj-title">Mushroom-X Social Media</h3>
-                    <p class="proj-desc">Full Instagram content creation and management since 2021.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="image-box"><img src="assets/images/09_ai_digital.jpg" alt="AI Creation"></div>
-                <div class="content-box">
-                    <span class="cat-num">08-09 / TECH & AI</span>
-                    <h3 class="proj-title">AI Content Creation</h3>
-                    <p class="proj-desc">Integration of AI tools in digital and printed media development.</p>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="certs-section">
-            <h2 style="margin-bottom: 20px;">07 / Supporting Documents</h2>
+        <section class="supporting-docs">
+            <h2 style="font-family: 'Playfair Display'; margin-bottom: 15px;">07 Supporting Documents</h2>
             <p style="color: var(--text-sub); max-width: 600px; margin: 0 auto;">
-                包含專業證書、大學推薦信及項目證明文件。為保護私隱，如需查閱完整資歷證明，請獲取下載權限或直接聯繫。
+                包含專業證書、大學推薦信及項目證明文件。為保護隱私，詳細內容請獲取下載權限後查閱。
             </p>
-            <div style="margin-top: 30px; opacity: 0.3;">
-                <img src="assets/images/10_credentials.jpg" alt="Certs" style="max-width: 200px;">
-            </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Joyce LAM Pui Ling. All Rights Reserved.</p>
-            <p style="margin-top: 10px;">Contact: [你的電郵位址]</p>
+    <div id="modal01" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal01')">&times;</span>
+            <span class="card-category">Photography Details</span>
+            <h2 class="card-title" style="font-size: 2.5rem;">Supreme Art Entertainment</h2>
+            <div class="modal-body">
+                <p>這裡可以放入更多關於攝影項目的細節描述，例如使用的器材、調色風格以及與藝人（蔡少芬、張晉等）的合作細節。</p>
+                <img src="assets/images/01_photo_max.jpg" alt="More photo">
+                <img src="assets/images/01_photo_natalie.jpg" alt="More photo">
+            </div>
         </div>
+    </div>
+
+    <div id="modal02" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal02')">&times;</span>
+            <h2 class="card-title">Social Media & Canva Design</h2>
+            <div class="modal-body">
+                <p>展示如何透過設計提升社交媒體的視覺一致性...</p>
+                <img src="assets/images/02_bday_post.jpg" alt="Detail image">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Joyce LAM Pui Ling. All Rights Reserved.</p>
     </footer>
 
     <script>
-        /* ==========================================
-           權限管理控制台
-           ========================================== */
-        const CAN_DOWNLOAD = false; // 修改此處控制下載：true = 開啟, false = 關閉
-        const MY_EMAIL = "joycelpl333@gmail.com"; // 
-        const PDF_PATH = "assets/pdf/Joyce_LAM_Portfolio_2025.pdf";
+        /* --- 下載權限控制 --- */
+        const CAN_DOWNLOAD = false; 
+        const MY_EMAIL = "joycelpl333@gmail.com"; 
 
         function handleDownload() {
             if (CAN_DOWNLOAD) {
-                const link = document.createElement('a');
-                link.href = PDF_PATH;
-                link.download = 'Joyce_LAM_Portfolio_2025.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+                window.open('assets/pdf/Joyce_LAM_Portfolio_2025.pdf', '_blank');
             } else {
                 alert(`目前閣下未有下載權限，請聯絡 [${MY_EMAIL}] 查詢，謝謝。`);
+            }
+        }
+
+        /* --- 彈窗邏輯 (對應你原始 HTML 的點擊看更多) --- */
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden'; // 鎖定背景捲動
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = 'auto'; // 恢復背景捲動
+        }
+
+        // 點擊 Modal 背景也可關閉
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
             }
         }
     </script>
