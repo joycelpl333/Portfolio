@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta property="og:title" content="Joyce LAM Pui Ling Portfolio -  Kuse AI"><meta property="og:description" content="Joyce LAM Pui Ling Portfolio"><meta property="og:url" content="https://www.kuse.ai/pages/Joyce-LAM-Pui-Ling-Portfolio/DreV6mn4YrY4jpRqqaFSNQ"><meta property="og:type" content="article"><meta property="og:site_name" content="Kuse AI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Joyce LAM Pui Ling Portfolio -  Kuse AI"><meta name="twitter:description" content="Joyce LAM Pui Ling Portfolio"><meta name="twitter:site" content="@kuseHQ"><link rel="canonical" href="https://www.kuse.ai/pages/Joyce-LAM-Pui-Ling-Portfolio/DreV6mn4YrY4jpRqqaFSNQ"><meta name="description" content="Joyce LAM Pui Ling Portfolio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyce LAM Pui Ling Portfolio -  Kuse AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FAF8F3;
+            --pink: #E8B4B8;
+            --sage: #A8B5A0;
+            --dark: #2C2C2C;
+            --purple: #8B5CF6;
+            --cyan: #06B6D4;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--purple) 0%, var(--cyan) 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        nav {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--purple);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .intro h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--purple);
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .project-card-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--purple) 0%, var(--cyan) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .project-card-content {
+            padding: 30px;
+        }
+
+        .project-number {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--purple) 0%, var(--cyan) 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .project-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .meta-tag {
+            background: var(--cream);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--dark);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            overflow-y: auto;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-content {
+            background: white;
+            max-width: 1200px;
+            margin: 50px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            animation: slideDown 0.4s;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--purple) 0%, var(--cyan) 100%);
+            color: white;
+            padding: 40px;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            line-height: 1;
+            transition: transform 0.3s;
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 50px;
+        }
+
+        .modal-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .modal-gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .modal-gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .modal-gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .modal-gallery-caption {
+            padding: 15px;
+            background: var(--cream);
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+
+        .modal-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .modal-link-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--purple) 0%, var(--cyan) 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .modal-link-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--purple) 0%, var(--cyan) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+
+        .kuse-branding {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        .kuse-branding:hover {
+            opacity: 1;
+            color: var(--cyan);
+        }
+
+        .kuse-branding svg {
+            height: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-body {
+                padding: 30px 20px;
+            }
+
+            .modal-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Joyce LAM Pui Ling Portfolio -  Kuse AI","description":"Joyce LAM Pui Ling Portfolio","url":"https://www.kuse.ai/pages/Joyce-LAM-Pui-Ling-Portfolio/DreV6mn4YrY4jpRqqaFSNQ","author":{"@type":"Organization","name":"Kuse AI"},"publisher":{"@type":"Organization","name":"Kuse AI","url":"https://www.kuse.ai"},"inLanguage":"en","alternateName":"Joyce LAM Pui Ling Portfolio"}</script></head>
+<body>
+    <header class="header">
+        <h1>Joyce LAM Pui Ling</h1>
+        <p class="subtitle">Entertainment Industry Professional | Content Creator | Visual Designer</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="portfolio">
+        <div class="intro">
+            <h2>Portfolio</h2>
+            <p>Showcasing diverse work across photography, video production, graphic design, and digital content creation for leading entertainment companies including Supreme Art Entertainment, Echo Entertainment International Limited, Hey Music Hong Kong Limited, and Mushroom-X.</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card" onclick="openModal('modal-1')">
+                <div class="project-card-image">Photo Shooting Preview</div>
+                <div class="project-card-content">
+                    <span class="project-number">01</span>
+                    <h3 class="project-title">Photo Shooting</h3>
+                    <p class="project-description">Professional photography for Supreme Art Entertainment featuring Ada Choi Siu-Fun, Max Zhang Jin, and Natalie Ho.</p>
+                    <div class="project-meta">
+                        <span class="meta-tag">Photography</span>
+                        <span class="meta-tag">Retouching</span>
+                        <span class="meta-tag">Supreme Art</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('modal-2')">
+                <div class="project-card-image">Birthday Post Design</div>
+                <div class="project-card-content">
+                    <span class="project-number">02</span>
+                    <h3 class="project-title">Artiste's Birthday Post</h3>
+                    <p class="project-description">Graphic design for Athena Chu's birthday celebration using Canva and Meitu.</p>
+                    <div class="project-meta">
+                        <span class="meta-tag">Graphic Design</span>
+                        <span class="meta-tag">Social Media</span>
+                        <span class="meta-tag">2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('modal-3')">
+                <div class="project-card-image">Font Design Preview</div>
+                <div class="project-card-content">
+                    <span class="project-number">03</span>
+                    <h3 class="project-title">Font Design</h3>
+                    <p class="project-description">Custom font design for Terence's "Lostaholic" (永夜漂流) MV for Echo Entertainment.</p>
+                    <div class="project-meta">
+                        <span class="meta-tag">Typography</span>
+                        <span class="meta-tag">MV Design</span>
+                        <span class="meta-tag">2022</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('modal-4')">
+                <div class="project-card-image">Video Production</div>
+                <div class="project-card-content">
+                    <span class="project-number">04</span>
+                    <h3 class="project-title">Video Production</h3>
+                    <p class="project-description">Promotional videos for artistes including TikTok content and behind-the-scenes footage.</p>
+                    <div class="project-meta">
+                        <span class="meta-tag">Video Editing</span>
+                        <span class="meta-tag">TikTok</span>
+                        <span class="meta-tag">2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('modal-5')">
+                <div class="project-card-image">MV Behind The Scenes</div>
+                <div class="project-card-content">
+                    <span class="project-number">05</span>
+                    <h3 class="project-title">Video Footage Shooting</h3>
+                    <p class="project-description">MV behind-the-scenes shooting for Echo Entertainment and Supreme Art Entertainment.</p>
+                    <div class="project-meta">
+                        <span class="meta-tag">Videography</span>
+                        <span class="meta-tag">BTS</span>
+                        <span class="meta-tag">2021-2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('modal-6')">
+                <div class="project-card-image">Instagram Content</div>
+                <div class="project-card-content">
+                    <span class="project-number">06</span>
+                    <h3 class="project-title">Instagram Post Creation</h3>
+                    <p class="project-description">Social media content for Mushroom-X including posts, templates, and workshop materials.</p>
+                    <div class="project-meta">
+                        <span class="meta-tag">Social Media</span>
+                        <span class="meta-tag">Content Creation</span>
+                        <span class="meta-tag">2021+</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('modal-7')">
+                <div class="project-card-image">University MV Project</div>
+                <div class="project-card-content">
+                    <span class="project-number">07</span>
+                    <h3 class="project-title">University MV Shooting Project</h3>
+                    <p class="project-description">Producer role for "Death of a Salesman" MV featuring gobo lighting and artistic cinematography.</p>
+                    <div class="project-meta">
+                        <span class="meta-tag">Production</span>
+                        <span class="meta-tag">Cinematography</span>
+                        <span class="meta-tag">University</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('modal-8')">
+                <div class="project-card-image">AI Tarot Cards</div>
+                <div class="project-card-content">
+                    <span class="project-number">08</span>
+                    <h3 class="project-title">AI Creation (Printed)</h3>
+                    <p class="project-description">Innovative holographic tarot card set designed with AI, Autodesk Sketchbook, and Meitu.</p>
+                    <div class="project-meta">
+                        <span class="meta-tag">AI Design</span>
+                        <span class="meta-tag">Print Design</span>
+                        <span class="meta-tag">2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('modal-9')">
+                <div class="project-card-image">AI Games Preview</div>
+                <div class="project-card-content">
+                    <span class="project-number">09</span>
+                    <h3 class="project-title">AI Creation (Digital)</h3>
+                    <p class="project-description">HTML/mobile games including Mascot Sudoku, Mascot Wanted, Where's Jaidee, and Tarot Quiz.</p>
+                    <div class="project-meta">
+                        <span class="meta-tag">Game Development</span>
+                        <span class="meta-tag">HTML/CSS/JS</span>
+                        <span class="meta-tag">GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-1">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Photo Shooting</h2>
+                <span class="close-modal" onclick="closeModal('modal-1')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Professional photography for artiste management company, Supreme Art Entertainment. Colour and retouching were re-edited by marketing colleagues. The pictures were uploaded on company's and artiste's Weibo.</p>
+                
+                <div class="modal-gallery">
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Ada Choi Outdoor Photo 1</div>
+                        <div class="modal-gallery-caption">Ada Choi Siu-Fun - 1</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #8B5CF6 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Ada Choi Photo 2</div>
+                        <div class="modal-gallery-caption">Ada Choi Siu-Fun - 2</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #E8B4B8 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Ada Choi Photo 3</div>
+                        <div class="modal-gallery-caption">Ada Choi Siu-Fun - 3</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #A8B5A0 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Ada Choi Photo 4</div>
+                        <div class="modal-gallery-caption">Ada Choi Siu-Fun - 4</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Ada Choi Photo 5</div>
+                        <div class="modal-gallery-caption">Ada Choi Siu-Fun - 5</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Ada Choi Photo 6</div>
+                        <div class="modal-gallery-caption">Ada Choi Siu-Fun - 6</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #E8B4B8 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Ada Choi Photo 7</div>
+                        <div class="modal-gallery-caption">Ada Choi Siu-Fun - 7</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #A8B5A0 0%, #8B5CF6 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Ada Choi Photo 8</div>
+                        <div class="modal-gallery-caption">Ada Choi Siu-Fun - 8</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Max Zhang Jin Photo 1</div>
+                        <div class="modal-gallery-caption">Max Zhang Jin - 1</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Max Zhang Jin Photo 2</div>
+                        <div class="modal-gallery-caption">Max Zhang Jin - 2</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #E8B4B8 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Max Zhang Jin Photo 3</div>
+                        <div class="modal-gallery-caption">Max Zhang Jin - 3</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #A8B5A0 0%, #8B5CF6 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Natalie Ho Photo 1</div>
+                        <div class="modal-gallery-caption">Natalie Ho (何榛綦) - 1</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Natalie Ho Photo 2</div>
+                        <div class="modal-gallery-caption">Natalie Ho (何榛綦) - 2</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Natalie Ho Photo 3</div>
+                        <div class="modal-gallery-caption">Natalie Ho (何榛綦) - 3</div>
+                    </div>
+                </div>
+
+                <div class="modal-links">
+                    <a href="#" class="modal-link-btn">View on Weibo - Ada Choi →</a>
+                    <a href="#" class="modal-link-btn">View on Weibo - Max Zhang Jin →</a>
+                    <a href="#" class="modal-link-btn">View on Weibo - Natalie Ho →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-2">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Artiste's Birthday Post</h2>
+                <span class="close-modal" onclick="closeModal('modal-2')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Used Canva, Meitu etc. to design and edit the portrait photo for artiste management company, Supreme Art Entertainment. The picture was uploaded on company's Instagram and Weibo at 2023/10/25.</p>
+                
+                <div class="modal-gallery">
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Athena Chu Birthday Design</div>
+                        <div class="modal-gallery-caption">Miss Athena Chu Yan's Birthday Picture - 10.25</div>
+                    </div>
+                </div>
+
+                <div class="modal-links">
+                    <a href="#" class="modal-link-btn">View on Instagram →</a>
+                    <a href="#" class="modal-link-btn">View on Weibo →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-3">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Font Design</h2>
+                <span class="close-modal" onclick="closeModal('modal-3')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Designed the font of song name 永夜漂流 (Lostaholic) for the new MV of singer Terence(秦倫斯) from artiste management company, Echo Entertainment International Limited(迴音國際). The song was released on 2022/10/27. Title Designer: Joyce Lam</p>
+                
+                <div class="modal-gallery">
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Lostaholic MV Cover</div>
+                        <div class="modal-gallery-caption">"Lostaholic" MV Cover Photo</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Album Cover</div>
+                        <div class="modal-gallery-caption">Album Cover Design</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #E8B4B8 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Credits List</div>
+                        <div class="modal-gallery-caption">MV Credits - Title Designer: Joyce Lam</div>
+                    </div>
+                </div>
+
+                <div class="modal-links">
+                    <a href="#" class="modal-link-btn">Watch MV on YouTube →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-4">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Video Production</h2>
+                <span class="close-modal" onclick="closeModal('modal-4')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Shot and edited promotion videos for artistes of artiste management company, Supreme Art Entertainment.<br><br>
+                • Ada Choi Siu-fun(蔡少芬)'s FB page and TikTok - Chongqing Broadcasting Group Spring Festival Super Night(川渝春晚) Artiste Behind the Scene 2024/02/09<br>
+                • Athena Chu Yan's TikTok - 'Jia Ren Zi You Yue'(嘉人自有約) Program Artiste Behind the Scene 2024/03/15</p>
+                
+                <div class="modal-gallery">
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Ada Choi TikTok Video</div>
+                        <div class="modal-gallery-caption">Ada Choi Siu-fun - TikTok Behind the Scene</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Athena Chu TikTok Video</div>
+                        <div class="modal-gallery-caption">Athena Chu Yan - TikTok Behind the Scene</div>
+                    </div>
+                </div>
+
+                <div class="modal-links">
+                    <a href="#" class="modal-link-btn">View on TikTok/Douyin - Ada Choi →</a>
+                    <a href="#" class="modal-link-btn">View on TikTok/Douyin - Athena Chu →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-5">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Video Footage Shooting</h2>
+                <span class="close-modal" onclick="closeModal('modal-5')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Shot MV Behind The Scenes for artiste management company, Echo Entertainment International Limited(迴音國際), to create videos for artistes' YouTube channels. Shot Behind the Scenes for artiste management company, Supreme Art Entertainment, and subsidiary, Hey Music Hong Kong Limited, to produce promotion videos uploaded to company's or artistes' social media platforms.<br><br>
+                Projects include: "Let's Never..." MV (2023/01/12), Dance Cover BTS - ITZY CHAERYEONG (2021), and multiple 2024 promotional shoots.</p>
+                
+                <div class="modal-gallery">
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Let's Never MV Screenshot</div>
+                        <div class="modal-gallery-caption">"Let's Never..." MV - Credit List</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">MV Shooting Day</div>
+                        <div class="modal-gallery-caption">Shot at MV Shooting Day</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #E8B4B8 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Dance Cover BTS</div>
+                        <div class="modal-gallery-caption">Dance Cover - Shot Behind The Scenes</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #A8B5A0 0%, #8B5CF6 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">2024 Shoot 1</div>
+                        <div class="modal-gallery-caption">Shot Footages (2024)</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">2024 Shoot 2</div>
+                        <div class="modal-gallery-caption">Shot Footages (2024)</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">2024 Shoot 3</div>
+                        <div class="modal-gallery-caption">Shot Footages (2024)</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #E8B4B8 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">2024 Shoot 4</div>
+                        <div class="modal-gallery-caption">Shot Footages (2024)</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #A8B5A0 0%, #8B5CF6 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">2023 Shoot</div>
+                        <div class="modal-gallery-caption">Shot Part of the Footages (2023)</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Singer Promo Shoot</div>
+                        <div class="modal-gallery-caption">Singer's Promotion Photo Shooting - Cutscenes (2023/00/06)</div>
+                    </div>
+                </div>
+
+                <div class="modal-links">
+                    <a href="#" class="modal-link-btn">Watch on YouTube - Let's Never MV →</a>
+                    <a href="#" class="modal-link-btn">Watch on YouTube - Dance Cover BTS →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-6">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Instagram Post Creation</h2>
+                <span class="close-modal" onclick="closeModal('modal-6')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Created Instagram posts, content, videos and templates for Innovation and Technology company, Mushroom-X. Started posting from 2021/06. Initiated Instagram @xspore.cuhk for Innovation and Technology company, Mushroom-X, and created posts, stories and poster to promote 'Experiential Learning on Sustainability via Mushroom' (體驗式菇菌工作坊) 2021.</p>
+                
+                <div class="modal-gallery">
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Instagram Grid</div>
+                        <div class="modal-gallery-caption">@mushroomx_social - Instagram Grid</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Halloween Post</div>
+                        <div class="modal-gallery-caption">Happy Halloween Post</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #E8B4B8 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Mushroom Day Post</div>
+                        <div class="modal-gallery-caption">National Mushroom Day Post</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #A8B5A0 0%, #8B5CF6 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Mid-Autumn Festival</div>
+                        <div class="modal-gallery-caption">Happy Mid-Autumn Festival Post</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Mushroom Benefits</div>
+                        <div class="modal-gallery-caption">When Mushroom Meets Art - Educational Post</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Olympics Post</div>
+                        <div class="modal-gallery-caption">Salute to Players! Olympics Post</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #E8B4B8 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Workshop Promo</div>
+                        <div class="modal-gallery-caption">Mushroom Workshop Promotion</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #A8B5A0 0%, #8B5CF6 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">X-Spore Game</div>
+                        <div class="modal-gallery-caption">X-Spore Online Game Launch</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Spore Print</div>
+                        <div class="modal-gallery-caption">Spore Print Educational Post</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Earth Day Post</div>
+                        <div class="modal-gallery-caption">Earth Day Celebration Post</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #E8B4B8 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Dragon Boat Festival</div>
+                        <div class="modal-gallery-caption">Happy Dragon Boat Festival Post</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #A8B5A0 0%, #8B5CF6 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">X-Spore CUHK</div>
+                        <div class="modal-gallery-caption">@xspore.cuhk - Instagram Profile</div>
+                    </div>
+                </div>
+
+                <div class="modal-links">
+                    <a href="#" class="modal-link-btn">Visit @mushroomx_social →</a>
+                    <a href="#" class="modal-link-btn">Visit @xspore.cuhk →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-7">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>University MV Shooting Project</h2>
+                <span class="close-modal" onclick="closeModal('modal-7')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Participate mainly as a producer (including schedule preparation, script and storyboard conception and props), supporting role performances, etc. The story is about a boy dreaming to inherit his father's job as a hand-painted ceramics master, but he gave up to be a sales due to father's sudden death and he desperately needed to support the family's finances. Utilizing Gobo and broken ceramics to represent the protagonist's disillusioned dream. Some framing angles were referenced from Thai singer Billkin's 'Skyline' MV and Japanese singer Suda Masaki(菅田将暉)'s 'Machigaisagashi(まちがいさがし)' MV<br><br>
+                Project: Endy Chow Kwok-yin's song "Death of a Salesman" (推銷員之死)</p>
+                
+                <div class="modal-gallery">
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Death of a Salesman Title</div>
+                        <div class="modal-gallery-caption">Endy Chow Kwok-yin's song "Death of a Salesman"</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Gobo Lighting Scene</div>
+                        <div class="modal-gallery-caption">Utilizing Gobo and Broken Ceramics - Disillusioned Dream</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #E8B4B8 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Reference Frame 1</div>
+                        <div class="modal-gallery-caption">Referenced from Billkin's 'Skyline' MV</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #A8B5A0 0%, #8B5CF6 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Reference Frame 2</div>
+                        <div class="modal-gallery-caption">Referenced from Suda Masaki's 'Machigaisagashi' MV</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-8">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>AI Creation (Printed)</h2>
+                <span class="close-modal" onclick="closeModal('modal-8')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Used AI to design, Autodesk Sketchbook and Meitu to digital paint and modify an innovative Tarot card set. Captured on 09/11/2025.</p>
+                
+                <div class="modal-gallery">
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Holographic Tarot Cards</div>
+                        <div class="modal-gallery-caption">Holographic Tarot Card Set</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Tarot Card Design Detail</div>
+                        <div class="modal-gallery-caption">Tarot Card Design with Holographic Finish</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #E8B4B8 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Tarot Card Backside</div>
+                        <div class="modal-gallery-caption">Tarot Card Backside Design</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-9">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>AI Creation (Digital)</h2>
+                <span class="close-modal" onclick="closeModal('modal-9')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Used AI to design and construct html/mobile games:<br>
+                • Mascot Sudoku (4x4, 9x9)<br>
+                • Mascot Wanted (finding the wanted one from a pool, static & moving)<br>
+                • Where's Jaidee (like the game 'Where's Wally?')<br>
+                • Tarot Quiz game released on 01/12/2025 in GitHub.</p>
+                
+                <div class="modal-gallery">
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Mascot Sudoku</div>
+                        <div class="modal-gallery-caption">Mascot Sudoku Game (4x4, 9x9)</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Mascot Wanted</div>
+                        <div class="modal-gallery-caption">Mascot Wanted Game (Static & Moving)</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #E8B4B8 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Tarot Quiz</div>
+                        <div class="modal-gallery-caption">Tarot Quiz Game Interface</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #A8B5A0 0%, #8B5CF6 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Where's Jaidee</div>
+                        <div class="modal-gallery-caption">Where's Jaidee Game Demo</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8B5CF6 0%, #E8B4B8 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Game Demo 1</div>
+                        <div class="modal-gallery-caption">3 Game Demo (Aug-Sep 2025)</div>
+                    </div>
+                    <div class="modal-gallery-item">
+                        <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #06B6D4 0%, #A8B5A0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Game Demo 2</div>
+                        <div class="modal-gallery-caption">Game Interface Screenshots</div>
+                    </div>
+                </div>
+
+                <div class="modal-links">
+                    <a href="https://grafittiii-hub.github.io/MascotTarotQuiz/" target="_blank" class="modal-link-btn">Play Tarot Quiz Game on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px;">Contact</h3>
+            <div class="contact-info">
+                <p><strong>Joyce LAM Pui Ling</strong></p>
+                <p>Email: <a href="/cdn-cgi/l/email-protection#3d5752445e58514d510e0e0e7d5a505c5451135e5250"><span class="__cf_email__" data-cfemail="8be1e4f2e8eee7fbe7b8b8b8cbece6eae2e7a5e8e4e6">[email&#160;protected]</span></a></p>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.7;">Entertainment Industry Professional | Content Creator | Visual Designer</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.6;">Experience with Supreme Art Entertainment, Echo Entertainment International Limited, Hey Music Hong Kong Limited, and Mushroom-X</p>
+            
+            <div class="kuse-branding" onclick="window.open('https://kuse.ai', '_blank')">
+                <span>made with</span>
+                <svg viewBox="0,0,160,44" xmlns="http://www.w3.org/2000/svg"><path d="m.01,20.65C-.43,8.25,9.3-2.03,22.04.34,34.78,2.72,43.29,8.32,43.29,22.9s-8.66,19.01-22.03,20.3C7.9,44.5.46,33.05.01,20.65z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="m146.76,7.94c8.07,0,13.24,6.15,13.24,14.58v1.39h-20.75c.45,4.05,3.51,7.37,8.57,7.37,2.62,0,5.73-1.05,7.62-2.94l2.67,3.83c-2.67,2.55-6.62,3.88-10.9,3.88-8.07,0-14.08-5.6-14.08-14.08,0-7.76,5.67-14.02,13.63-14.02zm0,4.77c-5.01,0-7.29,3.83-7.57,7.1h15.13c-.11-3.16-2.28-7.1-7.57-7.1z" fill="currentColor"/><path d="m86.64,24.49c0,4.15,2.39,6.84,6.84,6.84,4.4,0,6.84-2.69,6.84-6.84V8.55h5.37v16.33c0,6.7-4.06,11.14-12.21,11.14-8.21,0-12.21-4.5-12.21-11.09V8.55h5.37v15.94zm32.99-16.55c4.49,0,8.06,1.47,10.6,3.86l-2.59,3.81c-2.05-2-5.28-3.08-8.06-3.08-2.88,0-4.84,1.37-4.84,3.32,0,1.91,2.64,2.54,5.81,3.27,4.59,1.08,10.26,2.4,10.26,8.46,0,4.94-3.76,8.41-11.14,8.41-4.98,0-8.94-1.76-11.24-4.11l2.54-4.11c1.86,1.91,5.18,3.67,8.84,3.67,3.91,0,5.57-1.66,5.57-3.62,0-2.3-2.88-2.98-6.21-3.76-4.54-1.08-9.87-2.3-9.87-8.06,0-4.5,4.2-8.06,10.31-8.06zM60.79,20.82,71.44,8.55h6.5L66.46,21.26,78.82,35.44h-6.5l-9.28-11.1-2.25,2.49v8.6h-5.33V8.55h5.33v12.27z" fill="currentColor"/></svg>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">This portfolio is the work of Lam Pui Ling Joyce. Please do not copy without permission. Some of the work samples, and/or service samples are the proprietary property of the organization whose name appears on this document.</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add(`active`);
+            document.body.style.overflow = `hidden`;
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove(`active`);
+            document.body.style.overflow = `auto`;
+        }
+
+        document.querySelectorAll(`.modal`).forEach(modal => {
+            modal.addEventListener(`click`, (e) => {
+                if (e.target === modal) {
+                    closeModal(modal.id);
+                }
+            });
+        });
+
+        document.addEventListener(`keydown`, (e) => {
+            if (e.key === `Escape`) {
+                document.querySelectorAll(`.modal.active`).forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
+        });
+
+        const backToTop = document.getElementById(`backToTop`);
+        window.addEventListener(`scroll`, () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add(`visible`);
+            } else {
+                backToTop.classList.remove(`visible`);
+            }
+        });
+
+        backToTop.addEventListener(`click`, () => {
+            window.scrollTo({
+                top: 0,
+                behavior: `smooth`
+            });
+        });
+
+        document.querySelectorAll(`a[href^="#"]`).forEach(anchor => {
+            anchor.addEventListener(`click`, function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute(`href`));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: `smooth`,
+                        block: `start`
+                    });
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.kuse.ai/sdk.prd.js"></script>
+</body>
+</html>
