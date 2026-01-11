@@ -3,254 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joyce LAM | Portfolio 2025</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Joyce LAM | Professional Portfolio 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* --- 1. 顏色與變量 (支援 Dark Mode) --- */
+        /* ==========================================
+           1. 變量與配色 (白金 / 黑金)
+           ========================================== */
         :root {
             --bg-color: #ffffff;
-            --text-main: #1a1a1a;
+            --text-main: #121212;
             --text-sub: #666666;
-            --accent-gold: #FFD700; /* 金色 Hover */
-            --card-bg: #fdfdfd;
-            --modal-bg: rgba(255, 255, 255, 0.95);
-            --border-radius: 20px; /* 圓角設定 */
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --accent-gold: #FFD700;
+            --card-bg: #fcfcfc;
+            --border-color: #eeeeee;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --radius: 24px;
+            --spacing-lg: 100px;
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg-color: #0a0a0a;
+                --bg-color: #080808;
                 --text-main: #ffffff;
-                --text-sub: #b0b0b0;
-                --card-bg: #161616;
-                --modal-bg: rgba(10, 10, 10, 0.98);
+                --text-sub: #a0a0a0;
+                --card-bg: #111111;
+                --border-color: #222222;
+                --nav-bg: rgba(8, 8, 8, 0.8);
             }
         }
 
-        /* --- 2. 基礎樣式 --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Poppins', sans-serif;
-            transition: var(--transition);
-            line-height: 1.6;
-        }
+        /* [關鍵功能]：隱藏控制項 */
+        .hide-item { display: none !important; }
 
+        /* ==========================================
+           2. 基礎樣式與導覽
+           ========================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.7; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
-        /* --- 3. Header & 空間感 --- */
-        header { padding: 100px 0 60px 0; text-align: center; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 10px; }
-        .subtitle { letter-spacing: 4px; color: var(--text-sub); text-transform: uppercase; font-size: 0.9rem; }
-
-        /* 下載按鈕 (圓角) */
-        .download-zone { margin-top: 40px; }
-        .btn-download {
-            background: transparent;
-            border: 1px solid var(--text-main);
-            color: var(--text-main);
-            padding: 12px 35px;
-            border-radius: 50px; /* 全圓角按鈕 */
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: var(--nav-bg); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
         }
-        .btn-download:hover {
-            background: var(--accent-gold);
-            border-color: var(--accent-gold);
-            color: #000;
-            transform: scale(1.05);
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        /* ==========================================
+           3. 內容排版 (高空間感)
+           ========================================== */
+        header { padding: 180px 0 100px; text-align: center; }
+        .hero-title { font-size: 4rem; margin-bottom: 20px; letter-spacing: -1px; }
+
+        .category-section { margin-bottom: var(--spacing-lg); }
+        .section-header { margin-bottom: 40px; border-left: 4px solid var(--accent-gold); padding-left: 20px; }
+        .section-num { color: var(--accent-gold); font-size: 1.1rem; font-weight: 800; display: block; }
+        
+        .item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 50px; }
+
+        .portfolio-card {
+            background: var(--card-bg); border-radius: var(--radius); overflow: hidden;
+            border: 1px solid var(--border-color); cursor: pointer; transition: all 0.4s ease;
         }
-
-        /* --- 4. 作品網格 (空間感 + 圓角) --- */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 50px; /* 增加空間感 */
-            padding: 60px 0;
+        .portfolio-card:hover { 
+            transform: translateY(-10px); border-color: var(--accent-gold); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
         }
+        .card-img { width: 100%; height: 260px; object-fit: cover; background: #222; transition: 0.5s; }
+        .portfolio-card:hover .card-img { filter: brightness(1.1); }
+        .card-content { padding: 30px; }
 
-        .project-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            cursor: pointer;
-            border: 1px solid rgba(0,0,0,0.05);
-            transition: var(--transition);
-            position: relative;
+        /* 下載按鈕 */
+        .btn-gold {
+            background: transparent; border: 1.5px solid var(--text-main); color: var(--text-main);
+            padding: 12px 35px; border-radius: 50px; cursor: pointer; font-weight: 600; transition: 0.3s;
         }
+        .btn-gold:hover { background: var(--accent-gold); border-color: var(--accent-gold); color: #000; }
 
-        .project-card:hover {
-            transform: translateY(-12px);
-            border-color: var(--accent-gold);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .card-img {
-            width: 100%; height: 260px;
-            background: #eee;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .card-img { filter: brightness(0.8); }
-
-        .card-info { padding: 25px; }
-        .card-category { font-size: 0.75rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; }
-        .card-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin: 8px 0; }
-
-        /* --- 5. 彈窗系統 (Modal) --- */
+        /* ==========================================
+           4. Modal & Footer & About Me
+           ========================================== */
         .modal {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--modal-bg);
-            display: none; /* 預設隱藏 */
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-color); display: none; z-index: 2000; padding: 60px; overflow-y: auto;
         }
+        .modal.active { display: block; }
+        .close-modal { position: fixed; top: 30px; right: 40px; font-size: 2.5rem; cursor: pointer; }
 
-        .modal.active { display: flex; }
+        #about-me { padding: var(--spacing-lg) 0; border-top: 1px solid var(--border-color); }
+        .about-flex { display: flex; gap: 60px; align-items: flex-start; }
+        .about-text { flex: 2; }
+        .about-contact { flex: 1; background: var(--card-bg); padding: 40px; border-radius: var(--radius); }
 
-        .modal-content {
-            background: var(--bg-color);
-            width: 90%; max-width: 900px;
-            max-height: 85vh;
-            border-radius: var(--border-radius);
-            padding: 50px;
-            position: relative;
-            overflow-y: auto;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-            border: 1px solid var(--accent-gold);
-        }
-
-        .close-modal {
-            position: absolute; top: 20px; right: 25px;
-            font-size: 2rem; cursor: pointer; color: var(--text-main);
-        }
-
-        .modal-body img {
-            width: 100%; border-radius: 12px; margin: 20px 0;
-        }
-
-        /* --- 6. 頁腳與輔助證明 --- */
-        .supporting-docs {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 60px;
-            text-align: center;
-            margin: 60px 0;
-        }
-
-        footer { padding: 80px 0; text-align: center; opacity: 0.6; font-size: 0.8rem; }
-
+        footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-sub); }
+        .disclaimer { max-width: 800px; margin: 20px auto; font-size: 0.75rem; opacity: 0.7; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <p class="subtitle">Joyce LAM Pui Ling</p>
-            <h1>Creative Portfolio</h1>
-            <div class="download-zone">
-                <button onclick="handleDownload()" class="btn-download">DOWNLOAD FULL PDF</button>
-            </div>
+    <nav>
+        <div class="container nav-content">
+            <div style="font-weight: 800; letter-spacing: 2px;">JOYCE LAM</div>
+            <ul class="nav-links">
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#supporting-docs">Supporting Documents</a></li>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#disclaimer">Disclaimer</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <header class="container">
+        <p style="letter-spacing: 5px; color: var(--accent-gold); font-weight: 600;">PORTFOLIO 2025</p>
+        <h1 class="hero-title">Creative Excellence & Digital Strategy</h1>
+        <button class="btn-gold" onclick="handleDownload()">DOWNLOAD CATALOGUE</button>
     </header>
 
-    <main class="container">
-        <div class="portfolio-grid">
-            
-            <div class="project-card" onclick="openModal('modal01')">
-                <img src="assets/images/01_photo_ada.jpg" class="card-img" alt="Photo Shooting">
-                <div class="card-info">
-                    <span class="card-category">01 Photo Shooting</span>
-                    <h3 class="card-title">Supreme Art Entertainment</h3>
-                    <p style="font-size: 0.9rem; opacity: 0.7;">Artiste: Ada Choi, Max Zhang...</p>
+    <main class="container" id="portfolio">
+
+        <section class="category-section">
+            <div class="section-header">
+                <span class="section-num">01</span>
+                <h2 class="section-title">Photo Shooting</h2>
+            </div>
+            <div class="item-grid">
+                <div class="portfolio-card" onclick="openModal('m01')">
+                    <img src="assets/images/01_photo_ada.jpg" class="card-img" alt="Supreme Art">
+                    <div class="card-content">
+                        <h3>Supreme Art Entertainment</h3>
+                        <p style="color:var(--text-sub)">Artiste: Ada Choi, Max Zhang, Natalie Ho.</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="project-card" onclick="openModal('modal02')">
-                <img src="assets/images/02_bday_post.jpg" class="card-img" alt="Social Media">
-                <div class="card-info">
-                    <span class="card-category">02 Artiste's Social Media</span>
-                    <h3 class="card-title">Birthday Post Creation</h3>
-                    <p style="font-size: 0.9rem; opacity: 0.7;">Canva design for high engagement.</p>
                 </div>
-            </div>
-
-            </div>
-
-        <section class="supporting-docs">
-            <h2 style="font-family: 'Playfair Display'; margin-bottom: 15px;">07 Supporting Documents</h2>
-            <p style="color: var(--text-sub); max-width: 600px; margin: 0 auto;">
-                包含專業證書、大學推薦信及項目證明文件。為保護隱私，詳細內容請獲取下載權限後查閱。
-            </p>
         </section>
+
+        <section class="category-section">
+            <div class="section-header">
+                <span class="section-num">02</span>
+                <h2 class="section-title">Artiste's Birthday Post</h2>
+            </div>
+            <div class="item-grid">
+                <div class="portfolio-card" onclick="openModal('m02')">
+                    <img src="assets/images/02_bday_post.jpg" class="card-img" alt="Canva Design">
+                    <div class="card-content">
+                        <h3>Social Engagement Design</h3>
+                        <p style="color:var(--text-sub)">Canva-based creative for artiste's social media.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section" id="supporting-docs">
+            <div class="section-header">
+                <span class="section-num">10</span>
+                <h2 class="section-title">Other Supporting Documents</h2>
+            </div>
+            <div class="item-grid">
+                <div class="portfolio-card" onclick="openModal('m-certs')">
+                    <img src="assets/images/10_credentials.jpg" class="card-img" alt="Certs">
+                    <div class="card-content">
+                        <h3>Credentials & References</h3>
+                        <p style="color:var(--text-sub)">University letters and professional certifications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-me">
+            <div class="about-flex">
+                <div class="about-text">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">About Me</h2>
+                    <p>你好，我是 Joyce LAM。我是一位跨領域的創作者，擅長攝影、影像製作、平面設計以及 AI 數位創作。具備多年與頂尖藝人及創新科技公司（如 Mushroom-X）合作的經驗，我致力於將藝術美感與技術實現完美結合...</p>
+                    <p style="margin-top: 20px;">[在此輸入更多你的個人介紹，例如你的核心價值或職業目標]</p>
+                </div>
+                <div class="about-contact">
+                    <h3 style="margin-bottom: 20px;">Contact Information</h3>
+                    <p><strong>Email:</strong><br><a href="mailto:joycelpl333@gmail.com" style="color:var(--text-main)">joycelpl333@gmail.com</a></p>
+                    <p style="margin-top: 20px;"><strong>LinkedIn:</strong><br><a href="https://www.linkedin.com/in/joyce-lam-a770ab21a" target="_blank" style="color:var(--text-main)">View Profile</a></p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <div id="modal01" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('modal01')">&times;</span>
-            <span class="card-category">Photography Details</span>
-            <h2 class="card-title" style="font-size: 2.5rem;">Supreme Art Entertainment</h2>
-            <div class="modal-body">
-                <p>這裡可以放入更多關於攝影項目的細節描述，例如使用的器材、調色風格以及與藝人（蔡少芬、張晉等）的合作細節。</p>
-                <img src="assets/images/01_photo_max.jpg" alt="More photo">
-                <img src="assets/images/01_photo_natalie.jpg" alt="More photo">
+    <footer id="disclaimer">
+        <div class="container">
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> All works presented are for portfolio display purposes only. 
+                Copyright of images and videos belongs to the respective companies and artistes (Supreme Art Entertainment, Echo Entertainment, Mushroom-X, etc.). 
+                Unauthorized reproduction is prohibited.
             </div>
+            <p>&copy; 2025 Joyce LAM Pui Ling. All Rights Reserved.</p>
         </div>
-    </div>
-
-    <div id="modal02" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('modal02')">&times;</span>
-            <h2 class="card-title">Social Media & Canva Design</h2>
-            <div class="modal-body">
-                <p>展示如何透過設計提升社交媒體的視覺一致性...</p>
-                <img src="assets/images/02_bday_post.jpg" alt="Detail image">
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Joyce LAM Pui Ling. All Rights Reserved.</p>
     </footer>
 
+    <div id="m01" class="modal">
+        <span class="close-modal" onclick="closeModal('m01')">&times;</span>
+        <div class="container">
+            <h2 class="hero-title">Supreme Art Photography</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <img src="assets/images/01_photo_max.jpg" style="width:100%; border-radius: var(--radius);">
+                <img src="assets/images/01_photo_natalie.jpg" style="width:100%; border-radius: var(--radius);">
+            </div>
+        </div>
+    </div>
+
     <script>
-        /* --- 下載權限控制 --- */
+        /* 下載權限控制 */
         const CAN_DOWNLOAD = false; 
-        const MY_EMAIL = "joycelpl333@gmail.com"; 
+        const MY_EMAIL = "joycelpl333@gmail.com";
 
         function handleDownload() {
             if (CAN_DOWNLOAD) {
-                window.open('assets/pdf/Joyce_LAM_Portfolio_2025.pdf', '_blank');
+                window.open('assets/pdf/LAMPuiLing_Portfolio2025.pdf', '_blank');
             } else {
                 alert(`目前閣下未有下載權限，請聯絡 [${MY_EMAIL}] 查詢，謝謝。`);
             }
         }
 
-        /* --- 彈窗邏輯 (對應你原始 HTML 的點擊看更多) --- */
+        /* 彈窗控制 */
         function openModal(id) {
             document.getElementById(id).classList.add('active');
-            document.body.style.overflow = 'hidden'; // 鎖定背景捲動
+            document.body.style.overflow = 'hidden';
         }
-
         function closeModal(id) {
             document.getElementById(id).classList.remove('active');
-            document.body.style.overflow = 'auto'; // 恢復背景捲動
+            document.body.style.overflow = 'auto';
         }
 
-        // 點擊 Modal 背景也可關閉
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
+        /* 未來開發提示：
+           1. 隱藏某分類：在 <section class="category-section hide-item"> 加入 hide-item。
+           2. 隱藏某作品：在 <div class="portfolio-card hide-item"> 加入 hide-item。
+        */
     </script>
 </body>
 </html>
